@@ -1,0 +1,33 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+    background: #e8e8e8;
+    position: relative;
+}
+
+.home-buttons-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 35%;
+}
+
+.home-logo {
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    top: 30%;
+}
+
+.home-buttons-container button {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.home-background {
+    height: 100%;
+    width: 60%;
+    position: absolute;
+    right: 0px;
+    z-index: 0;
+}
