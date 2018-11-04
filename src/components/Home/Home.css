@@ -1,0 +1,30 @@
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.home-buttons-container {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-logo {
+    display: grid;
+    justify-self: left;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 150px;
+    margin-left: 5px;
+}
+
+.home-background {
+    display: grid;
+    height: 100%;
+    justify-self: right;
+    align-self: center;
+    width: 130%;
+}
