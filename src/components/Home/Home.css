@@ -48,20 +48,3 @@
     display: flex;
     flex-direction: column;
 }
-
-.home-logo {
-    display: grid;
-    justify-self: left;
-    align-self: center;
-    width: 100%;
-    margin-bottom: 150px;
-    margin-left: 5px;
-}
-
-.home-background {
-    display: grid;
-    height: 100%;
-    justify-self: right;
-    align-self: center;
-    width: 130%;
-}
