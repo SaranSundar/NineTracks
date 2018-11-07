@@ -3,8 +3,14 @@ import "./Home.css";
 import background from "./HomeAssets/background.png"
 import logo1 from "./HomeAssets/Logo1.png"
 import logo2 from "./HomeAssets/Logo2.png"
+import firebase from "../Firebase/Firebase"
 
 class Home extends Component {
+
+    constructor(props){
+        super(props);
+        this.provider = new firebase.auth.GoogleAuthProvider();
+    }
 
     render() {
         return (

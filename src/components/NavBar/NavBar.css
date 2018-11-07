@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+.NavBar {
+    width: 100vw;
+    height: 100px;
+    position: absolute;
+}
+
+.list-style {
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.list-style li {
+    display: inline;
+    font-size: 25px;
+    margin: 10px;
+    color: red;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
