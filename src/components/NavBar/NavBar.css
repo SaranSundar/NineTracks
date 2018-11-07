@@ -6,6 +6,10 @@
     position: absolute;
 }
 
+.list-style .right-side {
+    visibility: hidden;
+}
+
 .list-style {
     padding-left: 40px;
     padding-top: 20px;
@@ -18,4 +22,14 @@
     color: red;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (min-width: 789px) {
+    .list-style .right-side {
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        padding: 0;
+        margin: 0 10px 0 0;
+    }
 }

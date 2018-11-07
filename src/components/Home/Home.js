@@ -12,6 +12,14 @@ class Home extends Component {
         this.provider = new firebase.auth.GoogleAuthProvider();
         this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
         firebase.auth().useDeviceLanguage();
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                console.log("User is signed in");
+            } else {
+                // No user is signed in.
+            }
+        });
     }
 
     loginWithGoogle = () => {
@@ -20,6 +28,7 @@ class Home extends Component {
             let token = result.credential.accessToken;
             // The signed-in user info.
             let user = result.user;
+            console.log("User logged in ");
             // ...
         }).catch(function (error) {
             // Handle Errors here.

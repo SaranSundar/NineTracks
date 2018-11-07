@@ -1,19 +1,54 @@
+/*.material-button {*/
+    /*width: 140px;*/
+    /*height: 50px;*/
+    /*background: #FFFFFF;*/
+    /*border-radius: 25px;*/
+    /*font-size: 15px;*/
+    /*font-weight: bold;*/
+    /*position: relative;*/
+    /*z-index: 4;*/
+    /*box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);*/
+    /*margin: 5px;*/
+    /*outline: none;*/
+    /*border: none;*/
+/*}*/
+
+/*.material-button:focus {*/
+    /*outline: none;*/
+    /*border: none;*/
+/*}*/
+
+/*.material-button:hover {*/
+    /*background-color: #2EE59D;*/
+    /*box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);*/
+    /*color: #fff;*/
+    /*transform: translateY(-7px);*/
+/*}*/
+
 .material-button {
     width: 140px;
     height: 50px;
-    background: #FFFFFF;
-    border-radius: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    position: relative;
-    z-index: 4;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    margin: 5px;
-    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
     border: none;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 8px;
+    z-index: 4;
+    position: relative;
 }
 
-.material-button:focus {
-    outline: none;
-    border: none;
+.material-button:hover {
+    background-color: #f20700;
+    box-shadow: 0px 15px 20px rgba(229, 10, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
 }
