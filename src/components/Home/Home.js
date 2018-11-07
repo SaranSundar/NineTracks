@@ -7,10 +7,31 @@ import firebase from "../Firebase/Firebase"
 
 class Home extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.provider = new firebase.auth.GoogleAuthProvider();
+        this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        firebase.auth().useDeviceLanguage();
     }
+
+    loginWithGoogle = () => {
+        firebase.auth().signInWithPopup(this.provider).then(function (result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            let token = result.credential.accessToken;
+            // The signed-in user info.
+            let user = result.user;
+            // ...
+        }).catch(function (error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            // The email of the user's account used.
+            let email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            let credential = error.credential;
+            // ...
+        });
+    };
 
     render() {
         return (
@@ -21,8 +42,8 @@ class Home extends Component {
                 <div className="home-background-container">
                     <img src={background}/>
                     <div className="home-buttons-container">
-                        <button className="material-button">SIGN UP</button>
-                        <button className="material-button">LOG IN</button>
+                        <button className="material-button" onClick={this.loginWithGoogle}>SIGN UP</button>
+                        <button className="material-button" onClick={this.loginWithGoogle}>LOG IN</button>
                     </div>
                 </div>
             </div>
