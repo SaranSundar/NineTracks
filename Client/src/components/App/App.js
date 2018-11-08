@@ -1,9 +1,10 @@
 import React, {Component, Fragment} from 'react';
 import './App.css';
-import {Redirect, Route, Switch} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import Home from "../Home/Home";
 import NavBar from "../NavBar/NavBar";
 import firebase from "../Firebase/Firebase";
+import Channel from "../Channel/Channel";
 
 class App extends Component {
 
@@ -36,7 +37,8 @@ class App extends Component {
             // The signed-in user info.
             let user = result.user;
             console.log("User logged in success");
-            this.setState({user})
+            this.setState({user});
+            this.props.history.push('/channels');
             // ...
         }).catch(function (error) {
             // Handle Errors here.
@@ -46,6 +48,7 @@ class App extends Component {
             let email = error.email;
             // The firebase.auth.AuthCredential type that was used.
             let credential = error.credential;
+            console.log("Error: " + error);
             // ...
         });
     };
@@ -55,9 +58,10 @@ class App extends Component {
         firebase.auth().signOut().then(() => {
             // Sign-out successful.
             console.log("user sign out success");
+            this.props.history.push('/');
         }).catch((error) => {
             // An error happened.
-            console.log("user sign out failed: " + error);
+            console.log("Error: " + error);
         });
     };
 
@@ -67,7 +71,10 @@ class App extends Component {
             <Fragment>
                 <NavBar user={this.state.user} logout={this.logout}/>
                 <Switch>
-                    <Route path='/'
+                    <Route path='/channels'
+                           render={(props) => <Channel {...props}
+                                                       user={this.state.user}/>}/>
+                    <Route exact path='/'
                            render={(props) => <Home {...props} login={this.loginWithGoogle}
                                                     user={this.state.user}/>}/>
                     <Redirect to="/"/>
@@ -77,4 +84,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withRouter(App);
