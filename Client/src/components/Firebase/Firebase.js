@@ -1,5 +1,6 @@
 // Initialize Firebase
-import firebase from "firebase";
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 let config = {
     apiKey: "AIzaSyCEHo1HuTtlsd3A0hexBEBeawB-FP2Mp_0",
