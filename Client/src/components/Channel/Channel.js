@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import "./Channel.css";
+import logo2 from "./ChannelAssets/Logo2.png";
 
 class Channel extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Channel">
+                <div className="channel-logo-container">
+                    <img src={logo2}/>
+                </div>
                 {this.joinChannel()}
             </div>
         );
@@ -13,9 +17,9 @@ class Channel extends Component {
 
     joinChannel = () => {
         return (
-            <div className="join-channel">
+            <div className="options-grid">
                 <input placeholder="Enter a channel..."/>
-                <button>join</button>
+                <button>Join</button>
             </div>
         );
     }
