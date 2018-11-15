@@ -8,12 +8,26 @@ class Channel extends Component {
         return (
             <div className="Channel">
                 <div className="channel-logo-container">
-                    <img src={logo2}/>
+                    {/*<img src={logo2}/>*/}
+                    {this.showPlayingSong()}
                 </div>
                 {this.joinChannel()}
             </div>
         );
     }
+
+    showPlayingSong = () => {
+        return (
+            <div className="songs-grid">
+                {/*Figure out left to right text car animation*/}
+                <h1>Currently playing...</h1>
+                <div>
+                    <i className="fas fa-play"></i>
+                    <i className="fas fa-pause"></i>
+                </div>
+            </div>
+        );
+    };
 
     joinChannel = () => {
         return (

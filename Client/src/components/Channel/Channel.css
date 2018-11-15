@@ -3,15 +3,87 @@
     height: 100vh;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     justify-items: center;
     align-items: center;
 }
 
+.songs-grid {
+    width: 400px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px #cecece solid;
+    justify-items: center;
+}
+
+.songs-grid h1 {
+    font-size: 25px;
+    font-weight: normal;
+    color: #595959;
+}
+
+.options-grid {
+    width: 300px;
+    height: 110px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.options-grid input {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+    outline: none;
+    font-weight: bold;
+    color: #6f6f6f;
+
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    padding: 3px 0 3px 3px;
+    margin: 5px 1px 3px 0;
+    border: 1px solid #DDDDDD;
+}
+
+.options-grid input:focus {
+    box-shadow: 0 0 5px rgb(238, 72, 69);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgb(238, 72, 69);
+}
+
+.options-grid button {
+    font-size: 20px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background: #d87a7e;
+    color: white;
+    font-weight: bold;
+}
+
+.options-grid button:active {
+    background: #bd363f;
+}
+
+.channel-logo-container {
+    display: none;
+}
+
 @media only screen and (min-width: 789px) {
 
+    .Channel {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .channel-logo-container {
+        visibility: visible;
         width: 350px;
         height: 150px;
         display: grid;
@@ -22,38 +94,5 @@
     .channel-logo-container img {
         width: 100%;
         height: 100%;
-    }
-
-    .options-grid {
-        width: 300px;
-        height: 110px;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 10px;
-    }
-
-    .options-grid input {
-        text-align: center;
-        font-size: 20px;
-        border-radius: 8px;
-        outline: none;
-        border: 1px black solid;
-        font-weight: bold;
-        color: #6f6f6f;
-    }
-
-    .options-grid button {
-        font-size: 20px;
-        border-radius: 8px;
-        outline: none;
-        border: 1px black solid;
-        background: #d87a7e;
-        color: white;
-        font-weight: bold;
-    }
-
-    .options-grid button:active {
-        background: #bd363f;
     }
 }
